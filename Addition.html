@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+</style>
+</head>
+<body>
+
+
+
+<h2 style="color:blue;text-align:center;">Addition</h2>
+<p id="myScore"> Your score is: </p>
+<button onclick="myGoBack()" class="button button1">GO BACK</button>
+<button onclick="mySubmit()" class="button button2">SUBMIT</button>
+<button onclick="myTryAgain()" class="button button2">TRY AGAIN</button>
+
+<script>
+var f1=Math.floor(Math.random() * 10);
+var f2=Math.floor(Math.random() * 10);
+var s1=Math.floor(Math.random() * 10);
+var s2=Math.floor(Math.random() * 10);
+var t1=Math.floor(Math.random() * 10);
+var t3=Math.floor(Math.random() * 10);
+</script>
+
+<table style="width:100%">
+  <tr>
+    <td id=td11>4</td>
+    <td id=td12>1</td>
+    <td id=td13>7</td>
+  </tr>
+  <tr>
+    <td id=td21>4</td>
+    <td id=td22>7</td>
+    <td id=td23>1</td>
+  </tr>
+  <tr>
+    <td><form action="/action_page.php">
+  <input type="text" id="fAns" name="fname" value="">
+</form></td>
+    <td><form action="/action_page.php">
+  <input type="text" id="sAns" name="fname" value="">
+</form></td>
+    <td><form action="/action_page.php">
+  <input type="text" id="tAns" name="fname" value="">
+</form></td>
+  </tr>
+</table>
+ 
+<script>
+var f1=Math.floor(Math.random() * 10);
+var f2=Math.floor(Math.random() * 10);
+var s1=Math.floor(Math.random() * 10);
+var s2=Math.floor(Math.random() * 10);
+var t1=Math.floor(Math.random() * 10);
+var t3=Math.floor(Math.random() * 10);
+document.getElementById("td11").innerHTML =f1;
+document.getElementById("td12").innerHTML =s1;
+document.getElementById("td13").innerHTML =t1;
+document.getElementById("td21").innerHTML =f2;
+document.getElementById("td22").innerHTML =s2;
+document.getElementById("td23").innerHTML =t2;
+</script>
+
+<script>
+function myGoBack() {
+  location.replace("FrontPage.html")
+}
+function myTryAgain() {
+  location.replace("Addition.html")
+}
+function mySubmit() {
+  var ff1 = parseInt(document.getElementById("td11").innerText, 10);//by id
+var ss1 = parseInt(document.getElementById("td12").innerText, 10);//by id
+var tt1 = parseInt(document.getElementById("td13").innerText, 10);//by id
+  var ff2 = parseInt(document.getElementById("td21").innerText, 10);
+var ss2 = parseInt(document.getElementById("td22").innerText, 10);
+var tt2 = parseInt(document.getElementById("td23").innerText, 10);
+  var Ans1 = document.getElementById("fAns").value;//by id
+var Ans2 = document.getElementById("sAns").value;//by id
+var Ans3 = document.getElementById("tAns").value;//by id
+var Score=0;
+if(Ans1==(ff1+ff2))
+{
+Score=Score+1;
+}
+if (Ans2==(ss1+ss2))
+{
+Score=Score+1;
+}
+if (Ans3==(tt1+tt2))
+{
+Score=Score+1;
+}
+  document.getElementById("myScore").innerHTML = "Your score is:"+Score;
+}
+</script>
+
+</body>
+</html>
